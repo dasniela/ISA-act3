@@ -1,4 +1,7 @@
+package calculadora;
 import java.util.Scanner;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class calculadora {
 
@@ -21,7 +24,7 @@ public class calculadora {
             System.out.println("3. MULTIPLICACION");
             System.out.println("4. DIVISION");
             System.out.println("5. RAIZ CUADRADA");
-            System.out.println("6. POTENCIA");
+            System.out.println("6. EXPONENTE");
             System.out.println("0. SALIR");
             System.out.print("ELIGE LA OPCION QUE DESEES: ");
             
@@ -51,14 +54,13 @@ public class calculadora {
                     System.out.println("Resultado: " + resultado);
                     break;
                 case 5:
-                   /*  resultado = raiz(scanner);
+                    resultado = raiz(num1);
                     System.out.println("Resultado: " + resultado);
                     break;
                 case 6:
-                    resultado = potencia(scanner);
+                    resultado = exponente(num1, num2);
                     System.out.println("Resultado: " + resultado);
                     break;
-                    */
                 default:
                     System.out.println("Opcion invalida, elige una opcion entre el 1-6, Si deseas salir elige 0");
             }
@@ -70,7 +72,7 @@ public class calculadora {
         Tests();
 
     }
-   private static double suma(double num1, double num2) {        
+private static double suma(double num1, double num2) {        
         return num1 + num2;
         }
     
@@ -89,15 +91,22 @@ public class calculadora {
         }
         return num1 / num2;
     }
-
+    
+    public static double raiz(double numero) {
+        return Math.sqrt(numero);
+    }
+    
+    private static double exponente(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
 
     public static void Tests() {
         testSuma();
         testResta();
         testMultiplicacion();
         testDivision();
-        //testRaiz();
-        //testPotencia();
+        testRaiz();
+        testExponente();
     }
 
     public static void testSuma() {
@@ -131,12 +140,26 @@ public class calculadora {
     }
 
 
-/*    public static void testRaiz() {
+    public static void testRaiz() {
+        final double numero1 = 3;
+        final double expected = Math.sqrt(numero1);
 
+        final double resultado = raiz(numero1);
+
+        assertEquals(expected, resultado);
     }
-
-    public static void testPotencia() {
-
+    
+    public static void testExponente(){
+        final double base=3;
+        double exponente=3;
+        double result=1;
+        final calculadora calculadora = new calculadora();
+        final double resultado = calculadora.exponente(base,exponente);
+        while (exponente != 0){
+            result = calculadora.multiplicacion(result,base);
+            exponente = calculadora.resta(exponente,1);
+        }
+        final double expected = result;
+        assertEquals(expected,resultado);
     }
-    */
 }
