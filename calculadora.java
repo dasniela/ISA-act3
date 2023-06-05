@@ -71,6 +71,25 @@ public class calculadora {
         Tests();
 
     }
+   private static double suma(double num1, double num2) {        
+        return num1 + num2;
+        }
+    
+    private static double resta (double num1, double num2) {
+        return num1 - num2;
+    }
+    
+    private static double multiplicacion(double num1, double num2) {
+        return num1 * num2;
+    }
+    
+    private static double division(double num1, double num2) {
+        if (num1 == 0) {
+            System.out.println("No se puede realizar una division entre cero");
+            return Double.NaN;
+        }
+        return num1 / num2;
+    }
 
 
     public static void Tests() {
