@@ -1,8 +1,74 @@
-
+import java.util.Scanner;
 
 public class calculadora {
 
     public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("CALCULADORA");
+        System.out.println("----------");
+
+         // Input numbers from the user
+         System.out.print("Elige el primer número: ");
+         double num1 = scanner.nextDouble();
+ 
+         System.out.print("Elige el segundo número:  ");
+         double num2 = scanner.nextDouble();
+        
+        while (true) {
+            System.out.println("LAS OPCIONES DE LA CALCULADORA SON LAS SIGUIENTES:");
+            System.out.println("1. SUMA");
+            System.out.println("2. RESTA");
+            System.out.println("3. MULTIPLICACION");
+            System.out.println("4. DIVISION");
+            System.out.println("5. RAIZ CUADRADA");
+            System.out.println("6. POTENCIA");
+            System.out.println("0. SALIR");
+            System.out.print("ELIGE LA OPCION QUE DESEES: ");
+            
+            int opcion = scanner.nextInt();
+            
+            if (opcion == 0) {
+                break;
+            }
+            
+            double resultado;
+            
+            switch (opcion) {
+                case 1:
+                    resultado = suma(num1, num2);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                case 2:
+                    resultado = resta(num1, num2);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                case 3:
+                    resultado = multiplicacion(num1, num2);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                case 4:
+                    resultado = division(num1, num2);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                case 5:
+                   /*  resultado = raiz(scanner);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                case 6:
+                    resultado = potencia(scanner);
+                    System.out.println("Resultado: " + resultado);
+                    break;
+                    */
+                default:
+                    System.out.println("Opcion invalida, elige una opcion entre el 1-6, Si deseas salir elige 0");
+            }
+            
+            System.out.println();
+        }
+        
+        scanner.close();
+        Tests();
 
     }
 
