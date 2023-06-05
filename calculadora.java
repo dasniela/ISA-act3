@@ -6,9 +6,8 @@ public class calculadora {
        Scanner scanner = new Scanner(System.in);
         
         System.out.println("CALCULADORA");
-        System.out.println("----------");
 
-         // Input numbers from the user
+         // se pide primero los dos numeros necesarios para las operaciones porque si se piden en los metodos de suma, resta, etc. entonces los parametros serian scanner y no podriamos ingresar directamente los float
          System.out.print("Elige el primer número: ");
          double num1 = scanner.nextDouble();
  
